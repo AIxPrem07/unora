@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Wifi, BatteryMedium } from 'lucide-react';
 
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -13,13 +12,7 @@ export const AuthLayout = ({ children, showSplash = false }: AuthLayoutProps) =>
       <div className="w-full h-[100dvh] md:w-[360px] md:h-[740px] bg-background md:rounded-[36px] overflow-hidden shadow-2xl relative flex flex-col">
         
         {/* Status Bar */}
-        <div className="h-11 flex items-center justify-between px-6 text-xs font-semibold text-primary z-50 absolute top-0 w-full pointer-events-none">
-          <span className="text-[15px] font-bold">9:41</span>
-          <div className="flex gap-1.5 items-center">
-            <Wifi className="w-4 h-4" />
-            <BatteryMedium className="w-4 h-4" />
-          </div>
-        </div>
+       
 
         <AnimatePresence mode="wait">
           {showSplash ? (

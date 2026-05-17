@@ -1,5 +1,4 @@
 import React from 'react';
-import { Wifi, BatteryMedium } from 'lucide-react';
 import { BottomNav } from './BottomNav';
 
 interface MobileLayoutProps {
