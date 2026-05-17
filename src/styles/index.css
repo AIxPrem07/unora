@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-primary antialiased selection:bg-accent selection:text-primary;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Custom Photo Placeholder Fills */
+  .fill-sage { background: linear-gradient(145deg, #b8d087, #8aac5c); }
+  .fill-warm { background: linear-gradient(145deg, #e8c99a, #c4965a); }
+  .fill-dusk { background: linear-gradient(145deg, #a89bb5, #6d5f80); }
+  .fill-earth { background: linear-gradient(145deg, #c4b5a0, #9a8570); }
+  .fill-sky { background: linear-gradient(145deg, #a3c4dc, #6693b5); }
+  .fill-blush { background: linear-gradient(145deg, #e8a8b8, #c06080); }
+}

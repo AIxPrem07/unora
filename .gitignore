@@ -1,0 +1,14 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+dist/
+dist-ssr/
+
+# Environment Variables (CRITICAL!)
+.env
+.env.local
+.env.*

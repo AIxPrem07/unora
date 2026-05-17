@@ -1,0 +1,35 @@
+import React from 'react';
+import { Wifi, BatteryMedium } from 'lucide-react';
+import { BottomNav } from './BottomNav';
+
+interface MobileLayoutProps {
+  children: React.ReactNode;
+  activeTab?: 'home' | 'explore' | 'saved' | 'profile';
+  showNav?: boolean;
+}
+
+export const MobileLayout = ({ children, activeTab = 'home', showNav = true }: MobileLayoutProps) => {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#e8e0c8] p-0 md:p-8">
+      {/* Mobile Device Constrainer */}
+      <div className="w-full h-[100dvh] md:w-[360px] md:h-[740px] bg-background md:rounded-[36px] overflow-hidden shadow-2xl relative flex flex-col">
+        
+        {/* Fake Status Bar (Optional, usually handled by actual OS) */}
+        <div className="h-11 flex items-center justify-between px-6 text-xs font-semibold text-primary z-50 bg-background/80 backdrop-blur-md absolute top-0 w-full">
+          <span className="text-[15px] font-bold">9:41</span>
+          <div className="flex gap-1.5 items-center">
+            <Wifi className="w-4 h-4" />
+            <BatteryMedium className="w-4 h-4" />
+          </div>
+        </div>
+
+        {/* Scrollable Content Area */}
+        <main className="flex-1 overflow-y-auto no-scrollbar pt-11 pb-safe">
+          {children}
+        </main>
+
+        {showNav && <BottomNav activeTab={activeTab} />}
+      </div>
+    </div>
+  );
+};
